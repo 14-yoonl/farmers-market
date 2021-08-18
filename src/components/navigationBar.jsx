@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
 
 const Navigation = () => {
+  const history = useHistory();
   const [isLogin, setLogin] = useState(false);
+
+  const goToLogin = () => {
+    history.push("/login");
+  };
   return (
     <Container>
       {/* 로그인되어있지않을때 */}
@@ -13,7 +19,7 @@ const Navigation = () => {
         </div>
       ) : (
         <div>
-          <Navmenu>로그인</Navmenu>
+          <Navmenu onClick={goToLogin}>로그인</Navmenu>
           <Navmenu>|</Navmenu>
           <Navmenu>회원가입</Navmenu>
           <Navmenu>|</Navmenu>
@@ -32,5 +38,9 @@ const Container = styled.div`
 `;
 const Navmenu = styled.span`
   margin: 0 8px;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 export default Navigation;
