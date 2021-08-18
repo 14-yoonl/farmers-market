@@ -51,7 +51,7 @@ const Container = styled.div`
     }
     .optionSection {
       background-color: rgba(0, 0, 0, 0.05);
-      padding: 36px 16px;
+      padding: 16px 16px;
     }
   }
 `;
