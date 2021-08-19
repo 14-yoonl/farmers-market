@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ProductCard from "./productCard";
 import styled from "styled-components";
+import { getProductList } from "../Api";
+
 const ItemList = () => {
+  const [listData, setData] = useState();
+  useEffect(() => {
+    getProductList().then((res) => setData(res.data.products));
+  }, []);
   const _DATA = [
     {
       id: 1,
@@ -31,7 +37,7 @@ const ItemList = () => {
 
   return (
     <Container>
-      {_DATA.map((el) => (
+      {listData?.map((el) => (
         <ProductCard key={el.id} data={el} />
       ))}
     </Container>

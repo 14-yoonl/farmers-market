@@ -6,7 +6,7 @@ const SelectTable = ({ data }) => {
   const [orderCount, setOrderCount] = useState(0);
   return (
     <Container>
-      <img src={data.thumbnail} alt="thumbnail" className="image" />
+      <img src={data.thumbnailImage} alt="thumbnail" className="image" />
       <div className="body">
         <div className="title">
           <div className="name">{data.name}</div>
