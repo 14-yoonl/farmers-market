@@ -9,9 +9,10 @@ const ProductCard = ({ data }) => {
   };
   return (
     <Contaier onClick={goToDetail}>
-      <img src={data.thumbnail} alt="thumbnail" className="image" />
+      <img src={data.thumbnailImage} alt="thumbnail" className="image" />
       <div className="name tag">{data.name}</div>
-      <div className="price tag">{data.price.toLocaleString()}원</div>
+      <div>중량 "{data.weight}kg"</div>
+      <div className="price tag">{Number(data.price).toLocaleString()}원</div>
     </Contaier>
   );
 };
@@ -19,6 +20,7 @@ const ProductCard = ({ data }) => {
 const Contaier = styled.div`
   margin: 0 8px;
   margin-bottom: 24px;
+
   &:hover {
     cursor: pointer;
     .image {
@@ -26,6 +28,7 @@ const Contaier = styled.div`
     }
   }
   .image {
+    border-radius: 8px;
     width: 360px;
     aspect-ratio: 1/1.5;
   }

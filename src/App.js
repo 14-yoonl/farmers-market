@@ -1,6 +1,6 @@
 import Main from "./pages/main";
 import Detail from "./pages/detail";
-import Login from "./pages/kakaologin";
+import Login from "./pages/login";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
   return (
