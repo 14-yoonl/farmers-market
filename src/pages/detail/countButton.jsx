@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Icon from "./icon";
+import Icon from "../../components/icon";
 
 const CountButton = () => {
   const [count, setCount] = useState(1);

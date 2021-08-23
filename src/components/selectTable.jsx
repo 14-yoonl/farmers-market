@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import CountButton from "./countButton";
+import CountButton from "../pages/detail/countButton";
 const SelectTable = ({ data }) => {
   console.log(data);
   const [orderCount, setOrderCount] = useState(0);
