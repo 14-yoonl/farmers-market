@@ -1,8 +1,8 @@
 import React from "react";
-import NavigationBar from "../components/navigationBar";
-import NameCard from "../components/nameCard";
+import NavigationBar from "../../components/navigationBar";
+import NameCard from "../../components/nameCard";
 import styled from "styled-components";
-import ItemList from "../components/itemList";
+import ItemList from "./itemList";
 
 const MainPage = () => {
   return (

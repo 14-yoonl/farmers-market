@@ -1,5 +1,5 @@
-import Main from "./pages/main";
-import Detail from "./pages/detail";
+import Main from "./pages/main/main";
+import Detail from "./pages/detail/detail";
 import Login from "./pages/login";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
