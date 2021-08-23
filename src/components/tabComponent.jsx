@@ -44,30 +44,34 @@ const Container = styled.div`
   .menuBar {
     width: 100%;
     margin: 1rem 0;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: white;
     justify-content: space-between;
   }
   .tabs {
     display: flex;
     justify-content: space-between;
+    border: 2px solid rgba(0, 0, 0, 0.1);
     li {
-      width: 33%;
-      font-size: 1rem;
+      width: 33.33%;
+      font-size: 20px;
       text-align: center;
       font-weight: 700;
       display: inline-block;
       padding: 1rem;
+      :nth-child(2) {
+        border-right: 2px solid rgba(0, 0, 0, 0.1);
+        border-left: 2px solid rgba(0, 0, 0, 0.1);
+      }
       &:hover {
         cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.1);
+        opacity: 0.5;
       }
       &.active {
-        background-color: black;
+        background-color: #f75454;
         color: white;
       }
     }
-  }
-
-  .tabs li.active {
   }
 `;
 export default TabComponent;
