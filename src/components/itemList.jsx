@@ -12,32 +12,36 @@ const ItemList = () => {
     {
       id: 1,
       name: "3x4 설향",
-      thumbnail: "https://i.ibb.co/G5qdB9p/20191013-064847.jpg",
+      thumbnailImage: "https://i.ibb.co/G5qdB9p/20191013-064847.jpg",
       price: 20000,
+      weight: "1",
     },
     {
       id: 2,
       name: "3x5 설향",
-      thumbnail: "https://i.ibb.co/G5qdB9p/20191013-064847.jpg",
+      thumbnailImage: "https://i.ibb.co/G5qdB9p/20191013-064847.jpg",
       price: 20000,
+      weight: "1",
     },
     {
       id: 3,
       name: "4x5 설향",
-      thumbnail: "https://i.ibb.co/G5qdB9p/20191013-064847.jpg",
+      thumbnailImage: "https://i.ibb.co/G5qdB9p/20191013-064847.jpg",
       price: 20000,
+      weight: "1",
     },
     {
       id: 4,
       name: "4x5 설향",
-      thumbnail: "https://i.ibb.co/G5qdB9p/20191013-064847.jpg",
+      thumbnailImage: "https://i.ibb.co/G5qdB9p/20191013-064847.jpg",
       price: 20000,
+      weight: "1",
     },
   ];
 
   return (
     <Container>
-      {listData?.map((el) => (
+      {_DATA.map((el) => (
         <ProductCard key={el.id} data={el} />
       ))}
     </Container>

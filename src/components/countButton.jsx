@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Icon from "./icon";
-import Button from "./button";
+
 const CountButton = () => {
   const [count, setCount] = useState(1);
 
@@ -24,15 +24,35 @@ const CountButton = () => {
             <Icon src="add" size="20" />
           </div>
         </div>
-        <div>
-          총<strong>{(count * 20000).toLocaleString()}</strong> 원
-        </div>
+        <div>총{(count * 20000).toLocaleString()} 원</div>
       </div>
-      {count > 0 ? <Button label="장바구니" /> : null}
+      <div className="btns">
+        <Button style={btnStyle("cart")}>
+          <Icon src="cart" fill="white" size="16" />
+          <span> 장바구니</span>
+        </Button>
+        <Button style={btnStyle("direct")}>
+          <Icon src="handcart" fill="white" size="16" />
+          <span> 바로구매</span>
+        </Button>
+      </div>
     </Container>
   );
 };
 
+const btnStyle = (type) => {
+  if (type === "cart") {
+    return {
+      backgroundColor: "#f75454",
+      color: "white",
+    };
+  } else if (type === "direct") {
+    return {
+      backgroundColor: "#111111",
+      color: "white",
+    };
+  }
+};
 const Container = styled.div`
   .countSection {
     margin: 16px 0;
@@ -42,7 +62,6 @@ const Container = styled.div`
     padding: 16px 8px 0 8px;
     border-top: 1px dashed rgba(0, 0, 0, 0.2);
   }
-
   .countBtn {
     display: flex;
     align-items: center;
@@ -57,6 +76,20 @@ const Container = styled.div`
       border-right: 1px solid rgba(0, 0, 0, 0.2);
       margin: 0 4px;
     }
+  }
+  .btns {
+    display: flex;
+    justify-content: space-evenly;
+  }
+`;
+const Button = styled.div`
+  width: 45%;
+  padding: 16px;
+  text-align: center;
+  border-radius: 8px;
+  &:hover {
+    opacity: 0.7;
+    cursor: pointer;
   }
 `;
 

@@ -32,17 +32,26 @@ const Login = () => {
         <div className="hooking">
           솔정농원과 <br /> 함께하는 <br /> 방법
         </div>
-        <KakaoButton onClick={kakaoLoginHandler}>
+        <Button style={btnStyle("kakao")} onClick={kakaoLoginHandler}>
           <Icon src="kakao" size="32" />
           <div className="btnText">카카오 로그인 하기</div>
-        </KakaoButton>
-        <UnSignedUserBtn onClick={() => history.push("/")}>
+        </Button>
+        <Button style={btnStyle()} onClick={() => history.push("/")}>
           <Icon src="truck" size="32" />
           <div className="btnText">비회원으로 둘러보기</div>
-        </UnSignedUserBtn>
+        </Button>
       </div>
     </Container>
   );
+};
+const btnStyle = (type) => {
+  if (type === "kakao") {
+    return { backgroundColor: "#ffe812" };
+  } else {
+    return {
+      backgroundColor: "#cccccc",
+    };
+  }
 };
 const Container = styled.div`
   display: flex;
@@ -64,10 +73,9 @@ const Container = styled.div`
     }
   }
 `;
-const KakaoButton = styled.div`
+const Button = styled.div`
   margin: 16px 0;
   border-radius: 4px;
-  background-color: #ffe812;
   padding: 16px;
   width: 272px;
   display: flex;
@@ -78,22 +86,10 @@ const KakaoButton = styled.div`
   font-weight: 700;
   .btnText {
     margin: 0 4px;
+  }
+  &:hover {
+    opacity: 0.7;
   }
 `;
 
-const UnSignedUserBtn = styled.div`
-  border-radius: 4px;
-  background-color: #cccccc;
-  padding: 16px;
-  width: 272px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 700;
-  .btnText {
-    margin: 0 4px;
-  }
-`;
 export default Login;
