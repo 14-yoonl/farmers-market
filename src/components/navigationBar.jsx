@@ -26,29 +26,29 @@ const Navigation = () => {
       {isLogin ? (
         <>
           <Navmenu>
-            <Icon src="user" fill="white" size="36" />
+            <Icon src="user" fill="#757575" size="24" />
             <div>마이페이지</div>
           </Navmenu>
           <Navmenu onClick={() => goToRoute("cart")}>
-            <Icon src="cart" fill="white" size="36" />
+            <Icon src="cart" fill="#757575" size="24" />
             <div>장바구니</div>
             {cartCount.length > 0 ? (
               <div className="cartCount">{cartCount.length}</div>
             ) : null}
           </Navmenu>
           <Navmenu onClick={logOut}>
-            <Icon src="log_in" fill="white" size="36" />
+            <Icon src="log_in" fill="#757575" size="24" />
             <div>로그인</div>
           </Navmenu>
         </>
       ) : (
         <>
           <Navmenu onClick={() => goToRoute("login")}>
-            <Icon src="log_in" fill="white" size="36" />
+            <Icon src="log_in" fill="#757575" size="24" />
             <div>로그인</div>
           </Navmenu>
           <Navmenu onClick={() => goToRoute("cart")}>
-            <Icon src="cart" fill="white" size="36" />
+            <Icon src="cart" fill="#757575" size="24" />
             <div>장바구니</div>
             {cartCount.length > 0 ? (
               <div className="cartCount">{cartCount.length}</div>
@@ -66,10 +66,11 @@ const Navigation = () => {
 const Container = styled.div`
   display: flex;
   position: relative;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #f7545420;
   justify-content: flex-end;
   padding: 16px 144px;
-  color: white;
+  color: #757575;
+  font-weight: 500;
 `;
 const Navmenu = styled.span`
   text-align: center;

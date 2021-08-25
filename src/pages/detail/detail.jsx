@@ -11,19 +11,15 @@ const DetailPage = () => {
   const { data } = location.state;
 
   return (
-    <div>
-      <Section>
-        <div style={{ display: "flex" }}>
-          <SelectTable data={data} />
-        </div>
-        <Tab />
-      </Section>
-    </div>
+    <Section>
+      <SelectTable data={data} />
+      <Tab />
+    </Section>
   );
 };
 
 const Section = styled.div`
   width: 100%;
-  padding: 72px 144px;
+  padding: 0 72px;
 `;
 export default DetailPage;

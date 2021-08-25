@@ -28,14 +28,13 @@ const NameCard = () => {
   );
 };
 const Container = styled.div`
-  border-top: 2px solid black;
-  background-color: red;
+  border-top: 2px solid #f7545480;
   width: 15%;
   min-width: 240px;
   .nametag {
     padding: 36px 0;
     font-size: 32px;
-    font-weight: 700;
+    font-weight: 600;
     &:hover {
       cursor: pointer;
     }
@@ -43,14 +42,14 @@ const Container = styled.div`
   .tabs {
     color: rgba(0, 0, 0, 0.5);
     font-size: 16px;
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-top: 1px solid #f7545480;
     padding: 36px 0;
     div {
       margin: 16px 0;
     }
   }
   .info {
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-top: 1px solid #f7545480;
     padding: 36px 0;
     color: rgba(0, 0, 0, 0.5);
     .tel,

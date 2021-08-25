@@ -5,7 +5,7 @@ import Cart from "./pages/order/cart";
 import NameCard from "./components/nameCard";
 import NavBar from "./components/navigationBar";
 import styled from "styled-components";
-
+import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
   return (
@@ -26,6 +26,6 @@ function App() {
 
 const Container = styled.div`
   display: flex;
-  padding: 24px 144px;
+  padding: 72px 144px;
 `;
 export default App;
