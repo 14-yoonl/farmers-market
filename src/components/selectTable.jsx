@@ -27,16 +27,15 @@ const SelectTable = ({ data }) => {
 
 const Container = styled.div`
   display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-
+  justify-content: space-between;
+  margin-bottom: 72px;
   .image {
-    width: 480px;
-    aspect-ratio: 1/1.5;
+    width: 430px;
+    aspect-ratio: 1/1.25;
   }
   .body {
-    width: 480px;
-    margin-left: 48px;
+    width: 60%;
+    padding: 0 72px;
     .title {
       font-size: 36px;
       color: rgba(0, 0, 0, 0.4);

@@ -72,15 +72,13 @@ const Container = styled.div`
   .countBtn {
     display: flex;
     align-items: center;
-    padding: 0 4px;
+    padding: 4px 8px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     background-color: white;
     .count {
-      width: 56px;
+      width: 48px;
       padding: 4px;
       text-align: center;
-      border-left: 1px solid rgba(0, 0, 0, 0.2);
-      border-right: 1px solid rgba(0, 0, 0, 0.2);
       margin: 0 4px;
     }
   }
