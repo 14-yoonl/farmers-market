@@ -1,23 +1,78 @@
-import React from "react";
-import NavigationBar from "../../components/navigationBar";
-import NameCard from "../../components/nameCard";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import ItemList from "./itemList";
-
+import ProductCard from "./productCard";
+import { getProductList } from "../../Api";
 const MainPage = () => {
+  const [listData, setData] = useState();
+  useEffect(() => {
+    getProductList().then((res) => setData(res.data.products));
+  }, []);
+  const _DATA = [
+    {
+      id: 1,
+      name: "3x4 설향",
+      thumbnailImage: "https://i.ibb.co/G5qdB9p/20191013-064847.jpg",
+      price: 20000,
+      weight: "1",
+    },
+    {
+      id: 2,
+      name: "3x5 설향",
+      thumbnailImage: "https://i.ibb.co/G5qdB9p/20191013-064847.jpg",
+      price: 20000,
+      weight: "1",
+    },
+    {
+      id: 3,
+      name: "4x5 설향",
+      thumbnailImage: "https://i.ibb.co/G5qdB9p/20191013-064847.jpg",
+      price: 20000,
+      weight: "1",
+    },
+    {
+      id: 4,
+      name: "4x5 설향",
+      thumbnailImage: "https://i.ibb.co/G5qdB9p/20191013-064847.jpg",
+      price: 20000,
+      weight: "1",
+    },
+    {
+      id: 5,
+      name: "4x5 설향",
+      thumbnailImage: "https://i.ibb.co/G5qdB9p/20191013-064847.jpg",
+      price: 20000,
+      weight: "1",
+    },
+    {
+      id: 6,
+      name: "4x5 설향",
+      thumbnailImage: "https://i.ibb.co/G5qdB9p/20191013-064847.jpg",
+      price: 20000,
+      weight: "1",
+    },
+  ];
   return (
-    <div>
-      <NavigationBar />
-      <Section>
-        <NameCard />
-        <ItemList />
-      </Section>
-    </div>
+    <Container>
+      {_DATA.map((el) => (
+        <ProductCard key={el.id} data={el} />
+      ))}
+    </Container>
   );
 };
 
-const Section = styled.div`
-  display: flex;
-  margin: 72px 144px;
+const Container = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  @media only screen and (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 24px;
+  }
+  @media only screen and (max-width: 1440px) and (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 24px;
+  }
+  justify-items: center;
+  row-gap: 24px;
 `;
 export default MainPage;

@@ -12,10 +12,8 @@ const DetailPage = () => {
 
   return (
     <div>
-      <NavigationBar />
       <Section>
         <div style={{ display: "flex" }}>
-          <NameCard />
           <SelectTable data={data} />
         </div>
         <Tab />
