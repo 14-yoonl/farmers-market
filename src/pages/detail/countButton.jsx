@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import Icon from "../../components/icon";
+import { addCart } from "../../store/actions";
 
-const CountButton = () => {
+const CountButton = ({ data }) => {
+  console.log("data", data);
   const [count, setCount] = useState(1);
-
+  const dispatch = useDispatch();
   const handleProductCount = () => {
     if (count <= 1) {
       return alert("최소 주문 가능 수량은 1개 이상입니다.");

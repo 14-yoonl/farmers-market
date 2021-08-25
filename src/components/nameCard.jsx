@@ -1,10 +1,14 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 const NameCard = () => {
+  const history = useHistory();
   return (
     <Container>
-      <div className="nametag">솔 정 농 원</div>
+      <div className="nametag" onClick={() => history.push("/")}>
+        솔 정 농 원
+      </div>
       <div className="tabs">
         {/* 클릭한 탭 아래 보더 효과 or 글자색 변경 추가하기 */}
         <div>전체상품</div>
@@ -31,6 +35,9 @@ const Container = styled.div`
     padding: 36px 0;
     font-size: 32px;
     font-weight: 700;
+    &:hover {
+      cursor: pointer;
+    }
   }
   .tabs {
     color: rgba(0, 0, 0, 0.5);

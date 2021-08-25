@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import CountButton from "../pages/detail/countButton";
 const SelectTable = ({ data }) => {
-  console.log(data);
   const [orderCount, setOrderCount] = useState(0);
   return (
     <Container>
@@ -18,7 +17,7 @@ const SelectTable = ({ data }) => {
         <div className="optionSection">
           <div>수량을 선택해주세요.</div>
           <div>
-            <CountButton />
+            <CountButton data={data} />
           </div>
         </div>
       </div>
