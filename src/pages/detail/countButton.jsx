@@ -7,6 +7,7 @@ import { addCart } from "../../store/actions";
 const CountButton = ({ data }) => {
   console.log("data", data);
   const [count, setCount] = useState(1);
+
   const dispatch = useDispatch();
   const handleProductCount = () => {
     if (count <= 1) {
@@ -15,6 +16,9 @@ const CountButton = ({ data }) => {
       setCount(count - 1);
     }
   };
+
+  const obj = Object.assign(data, { count });
+
   return (
     <Container>
       <div className="countSection">
@@ -30,7 +34,7 @@ const CountButton = ({ data }) => {
         <div>총{(count * 20000).toLocaleString()} 원</div>
       </div>
       <div className="btns">
-        <Button style={btnStyle("cart")}>
+        <Button style={btnStyle("cart")} onClick={() => dispatch(addCart(obj))}>
           <Icon src="cart" fill="white" size="16" />
           <span> 장바구니</span>
         </Button>

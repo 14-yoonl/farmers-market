@@ -29,8 +29,9 @@ const NameCard = () => {
 };
 const Container = styled.div`
   border-top: 2px solid black;
-  width: 272px;
-
+  background-color: red;
+  width: 15%;
+  min-width: 240px;
   .nametag {
     padding: 36px 0;
     font-size: 32px;

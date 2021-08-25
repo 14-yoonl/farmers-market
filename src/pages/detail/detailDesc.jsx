@@ -1,33 +1,15 @@
 import React from "react";
-
+import Item from "../../components/cartListItem";
+import { useSelector } from "react-redux";
 const DetailDesc = () => {
-  const arr = [
-    { id: 1, name: "javascript" },
-    { id: 2, name: "HTML" },
-  ];
+  const List = useSelector((store) => store.cartReducer);
+  console.log(List);
 
-  const getHeart = (arr) => {
-    console.log(arr);
-  };
   return (
     <div>
-      <div>
-        {arr.map((item, index) => {
-          return (
-            <div
-              style={{
-                backgroundColor: "rgba(0,0,0,0.1)",
-                padding: "16px",
-                margin: "16px",
-              }}
-              onClick={() => getHeart(arr)}
-              key={index}
-            >
-              {item.name}
-            </div>
-          );
-        })}
-      </div>
+      {List.map((item) => (
+        <Item data={item} />
+      ))}
     </div>
   );
 };

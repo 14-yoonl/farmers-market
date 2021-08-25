@@ -6,13 +6,12 @@ import { useHistory } from "react-router-dom";
 
 const Navigation = () => {
   const cartCount = useSelector((store) => store.cartReducer);
-  console.log(cartCount);
   const token = localStorage.getItem("token");
   const history = useHistory();
   const [isLogin, setLogin] = useState(token);
 
-  const goToLogin = () => {
-    history.push("/login");
+  const goToRoute = (path) => {
+    history.push(`/${path}`);
   };
   const logOut = () => {
     alert("로그아웃 되었습니다.");
@@ -30,7 +29,7 @@ const Navigation = () => {
             <Icon src="user" fill="white" size="36" />
             <div>마이페이지</div>
           </Navmenu>
-          <Navmenu>
+          <Navmenu onClick={() => goToRoute("cart")}>
             <Icon src="cart" fill="white" size="36" />
             <div>장바구니</div>
             {cartCount.length > 0 ? (
@@ -44,11 +43,11 @@ const Navigation = () => {
         </>
       ) : (
         <>
-          <Navmenu onClick={goToLogin}>
+          <Navmenu onClick={() => goToRoute("login")}>
             <Icon src="log_in" fill="white" size="36" />
             <div>로그인</div>
           </Navmenu>
-          <Navmenu>
+          <Navmenu onClick={() => goToRoute("cart")}>
             <Icon src="cart" fill="white" size="36" />
             <div>장바구니</div>
             {cartCount.length > 0 ? (

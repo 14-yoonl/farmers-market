@@ -18,18 +18,15 @@ const ProductCard = ({ data }) => {
 };
 
 const Contaier = styled.div`
-  margin: 0 8px;
-  margin-bottom: 24px;
-
   &:hover {
     cursor: pointer;
     .image {
-      box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+      box-shadow: 2px 2px rgba(0, 0, 0, 0.1);
     }
   }
   .image {
     border-radius: 8px;
-    width: 360px;
+    width: 240px;
     aspect-ratio: 1/1.5;
   }
   .tag {
