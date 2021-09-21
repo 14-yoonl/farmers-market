@@ -10,27 +10,38 @@ const ProductCard = ({ data }) => {
   return (
     <Contaier onClick={goToDetail}>
       <img src={data.thumbnailImage} alt="thumbnail" className="image" />
-      <div className="name tag">{data.name}</div>
-      <div>중량 "{data.weight}kg"</div>
-      <div className="price tag">{Number(data.price).toLocaleString()}원</div>
+      <div className="name">
+        <div>{data.name}</div>
+        <div>/ "{data.weight}kg"</div>
+      </div>
+      <div className="price ">₩ {Number(data.price).toLocaleString()}</div>
     </Contaier>
   );
 };
 
 const Contaier = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   &:hover {
     cursor: pointer;
-    .image {
-      box-shadow: 2px 2px rgba(0, 0, 0, 0.1);
-    }
+    transform: scale(1.1);
+  }
+  .name {
+    display: flex;
+    margin: 16px 0 8px 0;
+    font-size: 16px;
+    color: #757575;
+  }
+  .price {
+    font-size: 16px;
   }
   .image {
     border-radius: 8px;
     width: 240px;
-    aspect-ratio: 1/1.5;
-  }
-  .tag {
-    margin: 4px 0;
+    aspect-ratio: 1/1.25;
   }
 `;
 

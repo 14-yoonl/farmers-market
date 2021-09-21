@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import ProductCard from "./productCard";
 import { getProductList } from "../../Api";
+import NavBar from "../../components/navigationBar";
+import NameCard from "../../components/nameCard";
 const MainPage = () => {
   const [listData, setData] = useState();
   useEffect(() => {
@@ -52,17 +54,28 @@ const MainPage = () => {
     },
   ];
   return (
-    <Container>
-      {_DATA.map((el) => (
-        <ProductCard key={el.id} data={el} />
-      ))}
-    </Container>
+    <>
+      <NavBar />
+      <Container>
+        <NameCard />
+        <CardList>
+          {_DATA.map((el) => (
+            <ProductCard key={el.id} data={el} />
+          ))}
+        </CardList>
+      </Container>
+    </>
   );
 };
 
 const Container = styled.div`
+  display: flex;
+  padding: 0 144px;
+`;
+const CardList = styled.div`
   width: 100%;
   display: grid;
+
   grid-template-columns: repeat(4, 1fr);
   @media only screen and (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
@@ -72,7 +85,6 @@ const Container = styled.div`
     grid-template-columns: repeat(3, 1fr);
     column-gap: 24px;
   }
-  justify-items: center;
-  row-gap: 24px;
+  row-gap: 36px;
 `;
 export default MainPage;

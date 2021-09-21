@@ -31,10 +31,11 @@ const Container = styled.div`
   border-top: 2px solid #f7545480;
   width: 15%;
   min-width: 240px;
+  margin-right: 72px;
   .nametag {
     padding: 36px 0;
     font-size: 32px;
-    font-weight: 600;
+    font-weight: 500;
     &:hover {
       cursor: pointer;
     }

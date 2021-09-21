@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import CountButton from "../pages/detail/countButton";
+
 const SelectTable = ({ data }) => {
-  const [orderCount, setOrderCount] = useState(0);
   return (
     <Container>
       <img src={data.thumbnailImage} alt="thumbnail" className="image" />
@@ -15,10 +15,7 @@ const SelectTable = ({ data }) => {
           <p>어쩌구저쩌구 딸기설명 쏼라쏼라</p>
         </div>
         <div className="optionSection">
-          <div>수량을 선택해주세요.</div>
-          <div>
-            <CountButton data={data} />
-          </div>
+          <CountButton data={data} />
         </div>
       </div>
     </Container>
