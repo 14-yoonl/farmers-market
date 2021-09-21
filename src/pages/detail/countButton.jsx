@@ -3,10 +3,13 @@ import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import Icon from "../../components/icon";
 import { addCart } from "../../store/actions";
-
+import { postCartItem } from "../../Api";
+import axios from "axios";
 const CountButton = ({ data }) => {
   console.log("data", data);
   const [count, setCount] = useState(1);
+  const token = localStorage.getItem("token");
+  console.log("token>>>>", token);
 
   const dispatch = useDispatch();
   const handleProductCount = () => {
@@ -17,6 +20,22 @@ const CountButton = ({ data }) => {
     }
   };
 
+  const handleAddCartItem = () => {
+    const body = {
+      productId: data.id,
+      quantity: count,
+    };
+    axios("http://172.30.1.52:8000/orders/carts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: token,
+      },
+      data: body,
+    });
+    // postCartItem(token, body).then((res) => console.log(">>>>>>>>", res));
+    // console.log("hi");
+  };
   const obj = Object.assign(data, { count });
 
   return (
@@ -31,10 +50,16 @@ const CountButton = ({ data }) => {
             <Icon src="add" size="20" />
           </div>
         </div>
-        <div>총{(count * 20000).toLocaleString()} 원</div>
+        <div>₩ {(count * 20000).toLocaleString()}</div>
       </div>
       <div className="btns">
-        <Button style={btnStyle("cart")} onClick={() => dispatch(addCart(obj))}>
+        <Button
+          style={btnStyle("cart")}
+          onClick={() => {
+            dispatch(addCart(obj));
+            handleAddCartItem();
+          }}
+        >
           <Icon src="cart" fill="white" size="16" />
           <span> 장바구니</span>
         </Button>
@@ -52,11 +77,13 @@ const btnStyle = (type) => {
     return {
       backgroundColor: "#f75454",
       color: "white",
+      marginRight: "8px",
     };
   } else if (type === "direct") {
     return {
       backgroundColor: "#111111",
       color: "white",
+      marginLeft: "8px",
     };
   }
 };
@@ -66,8 +93,7 @@ const Container = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 8px 0 8px;
-    border-top: 1px dashed rgba(0, 0, 0, 0.2);
+    /* padding: 16px 8px 0 8px; */
   }
   .countBtn {
     display: flex;
@@ -84,11 +110,11 @@ const Container = styled.div`
   }
   .btns {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
 `;
 const Button = styled.div`
-  width: 45%;
+  width: 50%;
   padding: 16px;
   text-align: center;
   border-radius: 8px;

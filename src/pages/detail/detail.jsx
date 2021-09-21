@@ -11,15 +11,25 @@ const DetailPage = () => {
   const { data } = location.state;
 
   return (
-    <Section>
-      <SelectTable data={data} />
-      <Tab />
-    </Section>
+    <>
+      <NavigationBar />
+      <Container>
+        <NameCard />
+        <Section>
+          <SelectTable data={data} />
+          <Tab />
+        </Section>
+      </Container>
+    </>
   );
 };
 
+const Container = styled.div`
+  display: flex;
+  padding: 0 144px;
+`;
+
 const Section = styled.div`
   width: 100%;
-  padding: 0 72px;
 `;
 export default DetailPage;

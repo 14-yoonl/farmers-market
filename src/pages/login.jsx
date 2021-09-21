@@ -9,7 +9,7 @@ const Login = () => {
   const kakaoLoginHandler = () => {
     Kakao.Auth.login({
       success: (authObj) => {
-        axios("http://172.30.1.22:8000/users/kakao", {
+        axios("http://172.30.1.52:8000/users/kakao", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

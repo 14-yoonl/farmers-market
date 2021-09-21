@@ -38,7 +38,7 @@ const Navigation = () => {
           </Navmenu>
           <Navmenu onClick={logOut}>
             <Icon src="log_in" fill="#757575" size="24" />
-            <div>로그인</div>
+            <div>로그아웃</div>
           </Navmenu>
         </>
       ) : (
@@ -71,6 +71,7 @@ const Container = styled.div`
   padding: 16px 144px;
   color: #757575;
   font-weight: 500;
+  margin-bottom: 72px;
 `;
 const Navmenu = styled.span`
   text-align: center;
@@ -81,18 +82,19 @@ const Navmenu = styled.span`
     cursor: pointer;
   }
   .cartCount {
-    width: 20px;
-    font-size: 14px;
-    font-weight: 600;
-    aspect-ratio: 1/1;
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+    color: white;
+    font-weight: 400;
     background-color: red;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     position: absolute;
-    right: 0px;
-    top: 0;
+    right: 5px;
+    top: -5px;
   }
 `;
 const ProfileImg = styled.div`
